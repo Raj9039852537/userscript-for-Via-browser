@@ -1,17 +1,18 @@
 /*
- * @name: Google native language translator 
- * @Author: gimmick modified by raj
+ * @name: Google native web page translation
+ * @Author: Gu Huatai
  * @version: 2.0
- * @description: auto webpage translator with whitelist
+ * @description: call the Google translation interface to translate the entire website
  * @include: *
  * @createTime: 2019-10-12 09:11:58
- * @updateTime   : 2022-01-01 00:51:04
+ * @updateTime: 2020-03-16 00:51:04
  */
+
 (function () {
   /* Determine whether to execute */
   /* URL blacklist system, not implemented when encountering these domain names */
   const blackList = ['zhihu.com', 'twitter.com', 'wenku.baidu.com', 'wk.baidu.com','127.0.0.1','js13kgames.com',/otherl/];
- const whiteList = ['bext.ketra.fun','via-app.cn'];
+ const whiteList = ['bext.ketra.fun','via-app.cn','bilibili.com','sogou.com',/.cn$/];
   const hostname = window.location.hostname;
   const key = encodeURIComponent('gimmick : ready to translate ');
   const isBlack = blackList.some(keyword => {
@@ -34,7 +35,7 @@ try{
 
 const dic = document.createElement('div');
   dic.id = 'tranlator';
-  dic.innerHTML = "🇬🇧🇰🇾?";
+  dic.innerHTML = "🇬🇧🇮🇳?";
   dic.setAttribute('style', `
     position: fixed;
     bottom: 5%;
@@ -42,7 +43,6 @@ const dic = document.createElement('div');
     z-index: 999999998;
   `);
 
-//alert('done ');
 
 var tlate=function(){ 
   /* Start code execution */
